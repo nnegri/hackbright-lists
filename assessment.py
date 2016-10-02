@@ -16,10 +16,10 @@ def all_odd(numbers):
         >>> all_odd([2, -6, 8])
         []
     """
-    all_odd = [] # Create empty list
-    for number in numbers:
-        if number % 2 != 0:
-            all_odd.append(number) # Append number to list if odd
+
+    # Use list comprehension to loop through list given in parameters, 
+    # and add number to new list if not divisible by 2
+    all_odd = [number for number in numbers if number % 2 != 0]
 
     return all_odd
 
