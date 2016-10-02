@@ -16,10 +16,10 @@ def all_odd(numbers):
         >>> all_odd([2, -6, 8])
         []
     """
-    all_odd = []
+    all_odd = [] # Create empty list
     for number in numbers:
         if number % 2 != 0:
-            all_odd.append(number)
+            all_odd.append(number) # Append number to list if odd
 
     return all_odd
 
@@ -43,7 +43,7 @@ def print_indices(items):
         2 Volvo
     """
     for i, item in enumerate(items):
-        print i, item
+        print i, item # Use enumerate method to print index before each item
 
 
 def foods_in_common(foods1, foods2):
@@ -73,15 +73,11 @@ def foods_in_common(foods1, foods2):
         []
 
     """
-    common_foods = []
-
-    set_foods1 = set (foods1)
-    set_foods2 = set(foods2)
-
-    common_foods = list(set_foods1 & set_foods2)
+    # Create sets out of food lists in order to use intersection to find common items
+    # Store the resulting intersection in a new list
+    common_foods = list(set(foods1) & set(foods2))
 
     return common_foods
-
 
 def every_other_item(items):
     """Return every other item in `items`, starting at first item.
@@ -96,8 +92,9 @@ def every_other_item(items):
        ... )
        ['you', 'are', 'good', 'at', 'code']
     """
+    # Start from beginning of list, increment by 2 until reaching the end of the list
     every_other = items[::2]
-
+    
     return every_other
 
 
@@ -122,10 +119,11 @@ def largest_n_items(items, n):
         >>> largest_n_items([3, 3, 3, 2, 1], 2)
         [3, 3]
     """
-    largest_items = []
-
+    largest_items = [] # Create empty list
+    # If the given parameter n is 0, the empty list will be returned
     if n > 0:
-        items.sort()
+        items.sort() # Sort list given in parameter
+        # Take last n numbers from sorted list to enter into largest_items list
         largest_items = items[-n:]
 
     return largest_items
