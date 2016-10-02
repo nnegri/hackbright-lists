@@ -20,7 +20,6 @@ def print_list(items):
     for item in items:
         print item
 
-
 def long_words(words):
     """Return words in input list that longer than 4 characters.
 
@@ -37,10 +36,13 @@ def long_words(words):
         >>> long_words(["all", "are", "tiny"])
         []
     """
-    longer_words = []
-    for word in words:
-        if len(word) > 4:
-            longer_words.append(word)
+    # longer_words = []
+    # for word in words:
+    #     if len(word) > 4:
+    #         longer_words.append(word)
+
+    # Can use list comprehension here
+    longer_words = [word for word in words if len(word) > 4]
 
     return longer_words
 
@@ -59,10 +61,13 @@ def n_long_words(words, n):
         >>> n_long_words(["I", "like", "apples", "bananas", "you"], 5)
         ['apples', 'bananas']
     """
-    n_longer_words = []
-    for word in words:
-        if len(word) > int(n):
-            n_longer_words.append(word)
+    # n_longer_words = []
+    # for word in words:
+    #     if len(word) > int(n):
+    #         n_longer_words.append(word)
+
+    # Can use list comprehension here
+    n_longer_words = [word for word in words if len(word) > int(n)]
 
     return n_longer_words
 
@@ -141,10 +146,12 @@ def halvesies(numbers):
         >>> halvesies([1, 5])
         [0.5, 2.5]
     """
-    half_numbers = []
-    for number in numbers:
-        half_number = float(number / 2.0)
-        half_numbers.append(half_number)
+    # half_numbers = []
+    # for number in numbers:
+    #     half_number = float(number / 2.0)
+    #     half_numbers.append(half_number)
+
+    half_numbers = [float(number / 2.0) for number in numbers]
 
     return half_numbers
 
@@ -157,10 +164,12 @@ def word_lengths(words):
         >>> word_lengths(["hello", "hey", "hello", "spam"])
         [5, 3, 5, 4]
     """
-    word_lengths = []
-    for word in words:
-        word_length = len(word)
-        word_lengths.append(word_length)
+    # word_lengths = []
+    # for word in words:
+    #     word_length = len(word)
+    #     word_lengths.append(word_length)
+
+    word_lengths = [len(word) for word in words]
 
     return word_lengths
 
@@ -263,6 +272,7 @@ def average(numbers):
         count += 1
 
     average = float(total / count)
+    
     return average
 
 
