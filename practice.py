@@ -349,11 +349,6 @@ def reverse_list_in_place(items):
         del items[0]
         i = i - 1
 
-    return items
-
-    # There are 2 cases for which nothing is expected, 
-    # but it is unclear in what cases that is
-
 def duplicates(items):
     """Return list of words from input list which were duplicates.
 
